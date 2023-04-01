@@ -1,0 +1,1 @@
+moduleSearchIndex = [{"l":"il.ac.kinneret.mjmay.hls.hlsjava"}]

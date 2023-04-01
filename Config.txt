@@ -1,0 +1,3 @@
+secret password
+mac password
+pc name
