@@ -1,8 +1,6 @@
 # HLSJava
 Hierarhical Location Service application for Communication and Information Security course
 
-## Author: Michael J. May
-
 ## Course: Communication and Information Security
 ### Semester 2 5782
 
