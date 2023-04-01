@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="632.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="il.ac.kinneret.mjmay.hls.hlsjava.HLSController">
+    <children>
+        <TitledPane animated="false" text="Configuration">
+            <content>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <VBox>
+                            <children>
+                                <HBox minHeight="50.0" minWidth="-Infinity" prefWidth="200.0">
+                                    <children>
+                                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minHeight="-Infinity" minWidth="50.0" prefWidth="80.0" text="My IP:">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="6.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <TextField fx:id="tfMyIp" minWidth="150.0" onAction="#localIPChanged" onKeyReleased="#localIPChanged" promptText="ex. 10.0.0.1">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </HBox.margin>
+                                        </TextField>
+                                        <Button fx:id="bAuto" minWidth="80.0" mnemonicParsing="false" onAction="#automaticIP" text="Auto">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                        <Label minWidth="80.0" text="My Port:">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="6.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <TextField fx:id="tfMyPort" minWidth="150.0" onAction="#localPortChanged" onKeyReleased="#localPortChanged" promptText="ex. 5000">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </HBox.margin>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                                <HBox minHeight="50.0" prefWidth="200.0">
+                                    <children>
+                                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="80.0" prefWidth="80.0" text="Father IP:">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="6.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <TextField fx:id="tfFatherIp" minWidth="150.0" onAction="#fatherIPChanged" onKeyReleased="#fatherIPChanged" promptText="ex. 10.0.0.1">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </HBox.margin>
+                                        </TextField>
+                                        <CheckBox fx:id="cbRoot" minWidth="80.0" mnemonicParsing="false" onAction="#rootChanged" onKeyReleased="#rootChanged" text="Root">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </HBox.margin>
+                                        </CheckBox>
+                                        <Label minWidth="80.0" text="Father Port:">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="6.0" />
+                                            </HBox.margin>
+                                        </Label>
+                                        <TextField fx:id="tfFatherPort" minWidth="150.0" onAction="#fatherPortChanged" onKeyReleased="#fatherPortChanged" promptText="ex. 5000">
+                                            <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                            </HBox.margin>
+                                        </TextField>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <Button fx:id="bStart" minHeight="80.0" minWidth="60.0" mnemonicParsing="false" onAction="#startStopListening" text="Start" textFill="#0dbf74">
+                            <HBox.margin>
+                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </content>
+        </TitledPane>
+        <TitledPane prefWidth="200.0" text="Queries">
+            <content>
+                <VBox prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <HBox prefHeight="50.0" prefWidth="200.0">
+                            <children>
+                                <Label minWidth="100.0" text="File to find:">
+                                    <HBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="6.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <TextField fx:id="tfFileFind" minWidth="350.0" promptText="Enter file name to find" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                    </HBox.margin>
+                                </TextField>
+                                <Button fx:id="bSearch" minWidth="80.0" mnemonicParsing="false" onAction="#searchFile" text="Search">
+                                    <HBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <Label minWidth="100.0" text="Results:">
+                                    <HBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="6.0" />
+                                    </HBox.margin>
+                                </Label>
+                                <ListView fx:id="lvResults" minWidth="350.0" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                    <HBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                    </HBox.margin>
+                                </ListView>
+                                <Button fx:id="bRetrieve" minWidth="80.0" mnemonicParsing="false" onAction="#retrieveFile" text="Retrieve">
+                                    <HBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </content>
+        </TitledPane>
+        <TitledPane prefWidth="200.0" text="File Addition">
+            <content>
+                <HBox prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Label minWidth="100.0" text="File to add:">
+                            <HBox.margin>
+                                <Insets bottom="2.0" left="2.0" right="2.0" top="6.0" />
+                            </HBox.margin>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <TextField fx:id="tfFileAdd" minWidth="350.0" promptText="Enter file name to add" VBox.vgrow="ALWAYS">
+                                    <VBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <Button fx:id="bAdd" minWidth="350.0" mnemonicParsing="false" onAction="#addFile" text="Add" VBox.vgrow="ALWAYS">
+                                    <VBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
+                  <VBox>
+                     <children>
+                              <Button fx:id="bAddBrowse" minWidth="80.0" mnemonicParsing="false" onAction="#browseFile" text="Browse">
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </VBox.margin>
+                              </Button>
+                        <Button fx:id="bResendAll" minWidth="80.0" mnemonicParsing="false" text="Resend All" onAction="#resendAllAddFile">
+                           <VBox.margin>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                    </children>
+                </HBox>
+            </content>
+        </TitledPane>
+        <TitledPane layoutX="10.0" layoutY="273.0" prefWidth="200.0" text="File Deletion">
+            <content>
+                <HBox prefHeight="50.0" prefWidth="200.0">
+                    <children>
+                        <Label minWidth="100.0" text="File to delete:">
+                            <HBox.margin>
+                                <Insets bottom="2.0" left="2.0" right="2.0" top="6.0" />
+                            </HBox.margin>
+                        </Label>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                            <children>
+                                <TextField fx:id="tfFileDelete" minWidth="350.0" promptText="Enter file name to delete" VBox.vgrow="ALWAYS">
+                                    <VBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                    </VBox.margin>
+                                </TextField>
+                                <Button fx:id="bDelete" minWidth="350.0" mnemonicParsing="false" onAction="#deleteFile" text="Delete">
+                                    <VBox.margin>
+                                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <Button fx:id="bDeleteBrowse" minWidth="80.0" mnemonicParsing="false" onAction="#browseFile" text="Browse">
+                            <HBox.margin>
+                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </content>
+        </TitledPane>
+        <TitledPane prefWidth="200.0" text="File Information - Local and Children">
+            <content>
+                <TableView fx:id="tvFileInfo" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                        <TableColumn minWidth="20.0" prefWidth="75.0" text="File Name" />
+                        <TableColumn minWidth="20.0" prefWidth="75.0" text="Location" />
+                        <TableColumn prefWidth="75.0" text="Is Local" />
+                    </columns>
+                    <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                    </padding>
+                </TableView>
+            </content>
+        </TitledPane>
+    </children>
+</VBox>
